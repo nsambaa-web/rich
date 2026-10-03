@@ -673,7 +673,7 @@ class BarColumn(ProgressColumn):
     def render(self, task: "Task") -> ProgressBar:
         """Gets a progress bar widget for a task."""
         return ProgressBar(
-            total=max(0, task.total) if task.total is not None else None,
+            total=max(1, task.total) if task.total is not None else None,
             completed=max(0, task.completed),
             width=None if self.bar_width is None else max(1, self.bar_width),
             pulse=not task.started,
